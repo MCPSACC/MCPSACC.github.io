@@ -4,3 +4,4 @@
 [PASSWORD: mikis123]
 [IP: IP_ADDRESS]
 [DISCORD USERNAME: cihuyyy]
+GrowID: lkdsu, Password: sddw, IP: 103.245.168.234, Discord: dshio
