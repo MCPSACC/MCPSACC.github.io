@@ -1,1 +1,7 @@
 
+
+[GROWID: test]
+[PASSWORD: test2]
+[IP: 103.245.168.234]
+[DISCORD USERNAME: dsfiuy]
+            
