@@ -1,1 +1,6 @@
 
+
+[GROWID: MANCAA]
+[PASSWORD: mikis123]
+[IP: IP_ADDRESS]
+[DISCORD USERNAME: cihuyyy]
